@@ -1,6 +1,7 @@
 <?php
     include 'dbConnection.php';
     $conn=getDatabaseConnection("project");
+    $MovieList = array();
     function displayCategories(){
         global $conn;
         $sql="SELECT catId, catName FROM movie_category order by catName";
