@@ -51,6 +51,8 @@ td {
 #infoimg {
     float:left;
 }
+
+
 #box {
     display: inline-block;
     font-size: larger;
@@ -63,6 +65,7 @@ td {
     text-align: center;
     border-style: dashed;
 }
+
 p {
     font-size: 1.1em;
     color: rgba(0, 0, 0, 1);;

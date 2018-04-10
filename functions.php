@@ -1,7 +1,6 @@
 <?php
     include 'dbConnection.php';
     $conn=getDatabaseConnection("project");
-    $MovieList = array();
     function displayCategories(){
         global $conn;
         $sql="SELECT catId, catName FROM movie_category order by catName";
@@ -101,6 +100,7 @@
                 } else {
                     echo "<td id='td-cell'> <button class='btn-danger'>Add To Cart </button> </td>" ;
                 }
+                
                 echo "<td id='td-text'> <a href=\"productInfo.php?Id=".$record["Id"]."\"><h3>More Info</h3> </a>  </td>";
                 echo "</form>" ;
                 echo '</tr>' ;

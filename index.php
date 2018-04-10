@@ -13,7 +13,7 @@
         foreach ($_SESSION['cart'] as &$item) {
             if ($newItem['id']==$item['id']){
                 $item['quantity'] +=1;
-                $found=true;
+                $found=false;
             }
         }
         if ($found!=true){
@@ -78,9 +78,6 @@
                      <label for="ascending">Ascending</label><br>
                 <input type="radio" name="sort" id="descending" value="desc">
                     <label for="descending">Descending</label><br>
-                      
-                <!--<input type="radio" name="sort" value="asc" /> Ascending <br>-->
-                <!--<input type="radio" name="sort" value="desc" /> Descending  <br> <br />-->
                 <input type="submit" value="Search" name="searchForm" id="Submit"/> <br />
             </div>
         </form>
