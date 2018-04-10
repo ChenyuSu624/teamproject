@@ -121,7 +121,8 @@
                 echo "<table class='table' > ";
                 echo "<tr><th></th>
                       <th>Title</th>
-                      <th>Price</th></tr>";
+                      <th>Price</th>
+                      <th>Remove</th></tr>";
                 foreach ($_SESSION['cart'] as $item){
                     $itemName= $item['name'];
                     $itemPrice= $item['price'];
@@ -132,7 +133,11 @@
                     echo "<td> <img src= '  img/".$item['image']."      '   width='100' height='120'>               </td>";
                     echo "<td id='td-text'>$itemName</td>   ";
                     echo "<td id='td-text'>$$itemPrice</td>   ";
-                    echo "</tr>";
+                    
+                    echo "<form method = 'post'>";
+                    echo "<input type = 'hidden' name = 'removeMovie' value = '$itemId'>";
+                    echo "<td id='td-cell'><button class = 'btn btn-danger'> Remove</button></td>";
+                    echo "</form></tr>";
                 }
                 echo "</table> <br />";
                 echo "<form method='post'> ";

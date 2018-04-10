@@ -8,6 +8,15 @@
             unset($_SESSION['cart'] [$itemKey]  );
         }
     }
+    
+    if(isset($_POST['removeMovie'])){
+        foreach($_SESSION['cart'] as $itemKey =>$item)
+        {
+            if($item['id'] == $_POST['removeMovie']){
+                unset($_SESSION['cart'][$itemKey]);
+            }
+        }
+    }
     if (isset($_POST['itemId'])){
         foreach($_SESSION['cart'] as &$item ){
             if ($item['id']==$_POST['itemId'])
