@@ -14,13 +14,17 @@ body {
     vertical-align:middle;
     color: black;
 }
+#td-quantity {
+    width: 5px;
+    text-align:center;
+    vertical-align:middle;
+}
 .table {
     margin:0 auto;
-    width: 70%;
     border:3px solid rgba(225, 50, 50, .9);;
 }
 .tableinfo {
-    padding-left: 15px;
+    margin:0 auto;
     border:3px solid rgba(0, 0, 0, 1);
 }
 th {
@@ -34,6 +38,7 @@ td {
     background: rgba(225, 225, 225, .9);
 }
 #td-cell {
+    width: 5px;
     text-align:center;
     vertical-align:middle;
 }
@@ -51,8 +56,6 @@ td {
 #infoimg {
     float:left;
 }
-
-
 #box {
     display: inline-block;
     font-size: larger;
@@ -65,8 +68,26 @@ td {
     text-align: center;
     border-style: dashed;
 }
-
 p {
     font-size: 1.1em;
     color: rgba(0, 0, 0, 1);;
+}
+input[type=text] {
+    padding: 5px;
+    border-color: black;
+    background: rgba(225, 0, 0, .6);
+}
+input[type=text]:focus{
+    background-color: rgba(225, 0, 0, .9);
+    outline: none;
+}
+input, select, textarea{
+    color: rgba(0, 0, 0, 1);
+}
+textarea:focus, input:focus {
+    color: rgba(0, 0, 0, 1);
+}
+::placeholder {
+    color: rgba(0, 0, 0, 1);
+    opacity: .8;
 }

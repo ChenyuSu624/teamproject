@@ -1,24 +1,23 @@
 <?php
     include 'functions.php';
     session_start();
-    if(!isset($_SESSION['cart'])){
-    $_SESSION['cart']=array();
-    }
+    if(!isset($_SESSION['cart']))
+        $_SESSION['cart']=array();
     if(isset($_POST['itemName'])){
         $newItem=array();
         $newItem['name']=$_POST['itemName'];
         $newItem['id']=$_POST['itemId'];
         $newItem['price']=$_POST['itemPrice'];
         $newItem['image']=$_POST['itemImage'];
-        foreach ($_SESSION['cart'] as &$item) {
+        foreach ($_SESSION['cart'] as &$item){
             if ($newItem['id']==$item['id']){
                 $item['quantity'] +=1;
-                $found=false;
+                $found=true;
             }
         }
         if ($found!=true){
             $newItem['quantity']=1;
-            array_push($_SESSION['cart'],$newItem );
+            array_push($_SESSION['cart'], $newItem);
         }
     }
 ?>
@@ -43,8 +42,8 @@
                 <ul class='nav navbar-nav'>
                     <li><a href='index.php'>Home</a></li>
                     <li><a href='cart.php'>
-                             <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'> </span>
-                             Cart: <?php displayCartCount();  ?>
+                             <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>
+                             Cart: <?php displayCartCount(); ?>
                          </a>
                     </li>
                 </ul>
@@ -61,13 +60,11 @@
                     <option value="">Select One </option>
                     <?=displayCategories()?>
                 </Select> <br> <br>
-
                 <b>Format: </b>
                 <Select name="format">
                     <option value="">Select One </option>
                     <?=displayFormats()?>
                 </Select> <br> <br>
-
                 <b>Rating: </b>
                 <Select name="rating">
                     <option value="">Select One </option>
@@ -82,17 +79,14 @@
             </div>
         </form>
          <!-- Display Search Results -->
-        <?php
-            displayResults();
-        ?>
+        <?php displayResults(); ?>
     </body>
     <hr>
     <div id="foot">
         <footer>
             <br /><strong>CST336 Internet Programming. By: Chenyu, Mustafa, Devin</strong><br />
             <strong>DISCLAIMER: This is not a real movie catalog</strong>
-            <br />
-            <img id="otter" src="img/otter.png" alt="CSUMB Logo" />
+            <br /><img id="otter" src="img/otter.png" alt="CSUMB Logo" />
         </footer>
     </div>
 </html>

@@ -2,27 +2,16 @@
     session_start();
     include 'functions.php';
     if (isset($_POST['removeId']))
-    {
-        foreach($_SESSION['cart'] as $itemKey => $item )
-        {
-            unset($_SESSION['cart'] [$itemKey]  );
-        }
-    }
-    
-    if(isset($_POST['removeMovie'])){
+        foreach($_SESSION['cart'] as $itemKey => $item)
+            unset($_SESSION['cart'] [$itemKey]);
+    if(isset($_POST['removeMovie']))
         foreach($_SESSION['cart'] as $itemKey =>$item)
-        {
-            if($item['id'] == $_POST['removeMovie']){
+            if($item['id'] == $_POST['removeMovie'])
                 unset($_SESSION['cart'][$itemKey]);
-            }
-        }
-    }
-    if (isset($_POST['itemId'])){
-        foreach($_SESSION['cart'] as &$item ){
+    if (isset($_POST['itemId']))
+        foreach($_SESSION['cart'] as &$item)
             if ($item['id']==$_POST['itemId'])
                 $item['quantity']=$_POST['update'];
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,19 +36,17 @@
                         <ul class='nav navbar-nav'>
                             <li><a href='index.php'>Home</a></li>
                              <li><a href='cart.php'>
-                                 <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true' > </span>   
-                                 Cart: <?php displayCartCount();  ?>
-                             </a>
-                        </li>  
+                                 <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>
+                                 Cart: <?php displayCartCount(); ?>
+                                 </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
                 <br /> <br /> <br />
                 <!-- Cart Items -->
             </div>
-                <?php
-                    displayCart();
-                ?>
+                <?php displayCart(); ?>
         </div>
     </body>
 </html>

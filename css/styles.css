@@ -65,6 +65,16 @@ input[type=text] {
     border-color: black;
     background: rgba(225, 0, 0, .6);
 }
+input[type=text]:focus{
+    background-color: rgba(225, 0, 0, .9);
+    outline: none;
+}
+input, select, textarea{
+    color: rgba(0, 0, 0, 1);
+}
+textarea:focus, input:focus {
+    color: rgba(0, 0, 0, 1);
+}
 select {
     color: black;
     background-color: rgba(225, 0, 0, .7);
@@ -82,16 +92,18 @@ input[type=submit] {
     background: rgba(225, 0, 0, .6);
     box-sizing: border-box;
 }
-input[type=text]:focus{
-    background-color: rgba(225, 0, 0, .9);
-    outline: none;
-}
 input[type=submit]:hover {
     color: rgba(225, 255, 255, 1);
 }
-
 .btn-danger {
     width: 75px;
     color: rgba(0, 0, 0, 1);
     border-color: black;
+}
+#error {
+    color: rgba(225, 0, 0, 1);
+    background-color: rgba(225, 225, 225, .9);
+    display: inline;
+    padding: 10px;
+    border: 3px solid rgba(0, 0, 0, 1);
 }
